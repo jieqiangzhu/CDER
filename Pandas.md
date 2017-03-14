@@ -1,3 +1,6 @@
+* auto-gen TOC:
+{:toc}
+
 # Pandas
 
 ## I/O
@@ -11,8 +14,6 @@ pd.read_sql(query, connection_object)  #从SQL表/库导入数据
 pd.read_json(json_string)  #从JSON格式的字符串导入数据
 pd.read_html(url)  #解析URL、字符串或者HTML文件，抽取其中的tables表格
 pd.read_clipboard()  #从你的粘贴板获取内容，并传给read_table()
-pd.DataFrame(dict)  #import form dict，Key is the column name，Value is the data
-
 ```
 
 
@@ -23,6 +24,11 @@ df.to_csv(filename)  #导出数据到CSV文件
 pd.to_excel('file.xlsx',sheet_name='Sheet1')  #导出数据到Excel文件
 df.to_sql(table_name, connection_object)  #导出数据到SQL表
 df.to_json(filename)  #以Json格式导出数据到文本文件
+```
+
+## Creation
+```Python
+pd.DataFrame(dict)  #import form dict，Key is the column name，Value is the data
 ```
 
 ## Selection
@@ -37,3 +43,10 @@ df.iloc[0,0]  #返回第一列的第一个元素
 ## Boolean Indexing 
 
 ## Pivotal 
+
+## Adding and Deleting
+### Adding row
+df['E'] = pd.Series(np.random.randn(6),index=df.index)
+
+df.insert(1,'a',np.random.randn(6))
+
