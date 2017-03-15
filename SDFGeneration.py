@@ -22,7 +22,7 @@ for i, name in enumerate(drugnames):
     if m is None:   # when m generated successfully, the judgement will be false
         errors.append([i,name])
     else:
-        m.SetProp("_Name",name)
+        m.SetProp("_Name",name) # Adding drugs name to the m object
         mols.append(m)
 
 # Write the SDF file
