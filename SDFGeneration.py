@@ -30,6 +30,7 @@ number = len(mols)
 w = Chem.SDWriter(str(number) + '_drugs.sdf') # the file name contain the number of drugs
 for m in mols: 
     w.write(m)
+w.close() # this is very important, if didnot do this, the last item in the file will be wrong
 
 # Write the failed drugs
 error_number = len(errors)
