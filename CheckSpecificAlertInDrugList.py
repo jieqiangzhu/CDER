@@ -22,6 +22,6 @@ results = [0 for each in range(len(suppl))]
 for i, mol in enumerate(suppl):
     results[i] = mol.HasSubstructMatch(Chem.MolFromSmiles(m))
     if results[i] == 1:
-        print(i)
+        print(i,"\n",Chem.MolToSmiles(suppl[i]))
     else:
         pass
